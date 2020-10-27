@@ -1,4 +1,5 @@
 def binary_search(arr, target):
+    print(arr)
     if not arr:
         return -1        
     if len(arr) == 1 and arr[0] == target:
@@ -7,9 +8,9 @@ def binary_search(arr, target):
         return -1
     low = 0         
     high = len(arr) - 1    
-    mid = (low + high) // 2
+    mid = int((low + high) / 2)
 
-    if arr[mid] > target:
-        return binary_search(arr[:mid], target)
+    if arr[mid] >= target:
+        return binary_search(arr[:mid+1], target)
     else:
         return binary_search(arr[mid+1:], target)
